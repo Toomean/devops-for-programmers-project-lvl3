@@ -1,2 +1,7 @@
-- import_playbook: ./setup_servers.yml
-- import_playbook: ./deploy_servers.yml
+---
+- name: Setup pip, and docker on servers. Deploy Redmine on servers. Install Datadog on servers
+  hosts: all
+  roles:
+    - docker
+    - redmine
+    - datadog.datadog

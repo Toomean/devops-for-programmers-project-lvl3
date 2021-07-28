@@ -27,6 +27,14 @@ web_droplet_count = <digital_ocean_desired_web_droplets_count>
 `make plan`
 `make apply`
 
+### Add droplet ips into ansible/hosts.ini
+example:
+```
+[webservers]
+<droplet_alias> ansible_host=<droplet_ip> ansible_user=root
+<droplet_alias> ansible_host=<droplet_ip> ansible_user=root
+```
+
 ### Deploy on servers
 `make deploy-servers`
 

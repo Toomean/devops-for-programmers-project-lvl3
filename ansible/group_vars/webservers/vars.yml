@@ -1,0 +1,17 @@
+---
+# Redmine
+redmine_app_port: 80
+
+# Datadog
+datadog_site: "datadoghq.eu"
+
+datadog_checks:
+  http_check:
+    init_config:
+    instances:
+      - name: Application health check status
+        url: http://localhost:{{ redmine_app_port }}
+        timeout: 5
+        method: GET
+
+datadog_api_key: "{{ vault_datadog_api_key }}"

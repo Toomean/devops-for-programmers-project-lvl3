@@ -2,16 +2,12 @@ setup:
 	make -C ansible setup
 	make -C terraform setup
 
-
 # Ansible
 install:
 	make -C ansible install
 
-setup-servers:
-	make -C ansible setup-servers
-
-deploy-servers:
-	make -C ansible deploy-servers
+deploy:
+	make -C ansible deploy
 
 # Terraform
 init:
