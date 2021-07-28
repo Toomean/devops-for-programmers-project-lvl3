@@ -1,0 +1,14 @@
+---
+- name: Install pip and docker-py, Install and run datadog, Run docker redmine containers
+  hosts: webservers
+
+  # https://stackoverflow.com/questions/41535838/how-to-run-apt-update-and-upgrade-via-ansible-shell
+  pre_tasks:
+    - name: Update and upgrade apt packages
+      apt:
+        upgrade: yes
+        update_cache: yes
+        cache_valid_time: 86400 #One day
+
+  roles:
+    - geerlingguy.pip

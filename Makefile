@@ -1,3 +1,19 @@
+setup:
+	make -C ansible setup
+	make -C terraform setup
+
+
+# Ansible
+install:
+	make -C ansible install
+
+setup-servers:
+	make -C ansible setup-servers
+
+deploy-servers:
+	make -C ansible deploy-servers
+
+# Terraform
 init:
 	make -C terraform init
 
@@ -9,3 +25,6 @@ apply:
 
 destroy:
 	make -C terraform destroy
+
+show:
+	make -C terraform show

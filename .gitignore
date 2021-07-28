@@ -1,0 +1,2 @@
+terraform/variables.auto.tfvars
+ansible/.ansible_secret

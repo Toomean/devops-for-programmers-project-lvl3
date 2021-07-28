@@ -27,7 +27,7 @@ variable "web_droplet_count" {
 
 variable "web_droplet_image" {
   type = string
-  default = "ubuntu-20-04-x64"
+  default = "docker-20-04"
 }
 
 variable "web_droplet_size" {

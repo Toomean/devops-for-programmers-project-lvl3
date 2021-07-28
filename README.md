@@ -1,2 +1,36 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Toomean/devops-for-programmers-project-lvl3/workflows/hexlet-check/badge.svg)](https://github.com/Toomean/devops-for-programmers-project-lvl3/actions)
+
+### Requirements
+1. Make
+2. Ansible:2.7
+
+### Add Terraform variables
+1. Create ./terraform/*.auto.tfvars file
+2. Add necessary variables
+
+```HCL
+do_token = "<digital_ocean_api_token>"
+pvt_key = "<path_to_digital_ocean_ssh_key>"
+ssh_key = "<digital_ocean_ssh_key_name>"
+domain_name = "<domain_name_to_create>"
+subdomain = "<subdomain_to_create>"
+
+region = "<digital_ocean_region>"
+web_droplet_count = <digital_ocean_desired_web_droplets_count>
+```
+
+### Install ansible dependencies and init Terraform
+`make setup`
+
+### Create Terraform infra
+`make plan`
+`make apply`
+
+### Deploy on servers
+`make deploy-servers`
+
+#### Balancer info
+![Balancer screenshot](https://raw.githubusercontent.com/Toomean/devops-for-programmers-project-lvl2/main/.github/images/balancer.png)
+
+[Balancer URL](https://hexlet.toomean.com)

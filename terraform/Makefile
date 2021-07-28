@@ -1,3 +1,5 @@
+setup: init
+
 init:
 	terraform init
 
@@ -9,3 +11,6 @@ apply:
 
 destroy:
 	terraform apply -destroy
+
+show:
+	terraform show terraform.tfstate
