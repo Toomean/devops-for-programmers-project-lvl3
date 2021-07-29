@@ -43,6 +43,6 @@ example:
 `make deploy-servers`
 
 #### Balancer info
-![Balancer screenshot](https://raw.githubusercontent.com/Toomean/devops-for-programmers-project-lvl2/main/.github/images/balancer.png)
+![Balancer screenshot](https://raw.githubusercontent.com/Toomean/devops-for-programmers-project-lvl3/main/.github/images/balancer.png)
 
 [Balancer URL](https://hexlet.toomean.com)
