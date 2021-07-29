@@ -3,6 +3,8 @@
   template:
     src: env.j2
     dest: '.env'
+  tags:
+    - skip_ansible_lint
 
 - name: Run Redmine Container
   docker_container:
