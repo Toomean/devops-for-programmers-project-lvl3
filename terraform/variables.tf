@@ -49,3 +49,13 @@ variable "web_db_size" {
   type = string
   default = "db-s-1vcpu-1gb"
 }
+
+variable "datadog_api_key" {
+  type = string
+}
+variable "datadog_app_key" {
+  type = string
+}
+variable "datadog_api_url" {
+  type = string
+}

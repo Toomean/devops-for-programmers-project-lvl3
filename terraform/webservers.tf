@@ -81,3 +81,16 @@ resource "digitalocean_database_cluster" "web" {
   region     = var.region
   node_count = 1
 }
+
+resource "datadog_monitor" "redmine" {
+  name    = "${ var.name } HTTP Alert! {{host.name}}"
+  type    = "service check"
+  message = "Monitor triggered. Notify: arttumin@gmail.com"
+  query   = "\"http.can_connect\".over(\"instance:application_health_check_status\").by(\"host\",\"instance\",\"url\").last(2).count_by_status()"
+
+  notify_no_data    = false
+  renotify_interval = 60
+
+  notify_audit = false
+  timeout_h    = 60
+}

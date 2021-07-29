@@ -9,6 +9,9 @@ install:
 deploy:
 	make -C ansible deploy
 
+list:
+	make -C ansible list
+
 # Terraform
 init:
 	make -C terraform init

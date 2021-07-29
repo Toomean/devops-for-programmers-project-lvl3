@@ -18,6 +18,10 @@ subdomain = "<subdomain_to_create>"
 
 region = "<digital_ocean_region>"
 web_droplet_count = <digital_ocean_desired_web_droplets_count>
+
+datadog_api_key = "<datadog_api_key>"
+datadog_app_key = "<datadog_app_key>"
+datadog_api_url = "<datadog_api_url>"
 ```
 
 ### Install ansible dependencies and init Terraform
