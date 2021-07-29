@@ -8,3 +8,6 @@
 - name: Include pip role
   include_role:
     name: geerlingguy.pip
+  vars:
+    pip_install_packages:
+      - name: docker
