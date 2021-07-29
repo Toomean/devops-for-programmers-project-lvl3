@@ -9,7 +9,7 @@
     name: redmine
     image: redmine:{{ redmine_version }}
     state: started
-    restart: yes
+    restart: true
     published_ports:
       - "{{ redmine_app_port }}:3000"
     env_file: .env
