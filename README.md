@@ -35,8 +35,8 @@ datadog_api_url = "<datadog_api_url>"
 example:
 ```
 [webservers]
-<droplet_alias> ansible_host=<droplet_ip> ansible_user=root
-<droplet_alias> ansible_host=<droplet_ip> ansible_user=root
+<droplet_alias> ansible_host=<droplet_ip> ansible_user=<ansible_user>
+<droplet_alias> ansible_host=<droplet_ip> ansible_user=<ansible_user>
 ```
 
 ### Deploy on servers
