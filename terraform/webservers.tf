@@ -1,7 +1,7 @@
 resource "digitalocean_droplet" "web" {
   count = var.web_droplet_count
 
-  name = "web-${ var.name }-${ var.region }-${ count.index + 1 }"
+  name = "web-${var.name}-${var.region}-${count.index + 1}"
 
   region = var.region
   image  = var.web_droplet_image
@@ -9,7 +9,7 @@ resource "digitalocean_droplet" "web" {
 
   ssh_keys = [data.digitalocean_ssh_key.main.id]
 
-  tags = ["${ var.name }-web"]
+  tags = ["${var.name}-web"]
 
   lifecycle {
     create_before_destroy = true
@@ -17,11 +17,11 @@ resource "digitalocean_droplet" "web" {
 }
 
 resource "digitalocean_certificate" "web" {
-  name = "${ var.name }-certificate"
+  name = "${var.name}-certificate"
 
   type = "lets_encrypt"
 
-  domains = ["${ var.subdomain }.${ data.digitalocean_domain.web.name }"]
+  domains = ["${var.subdomain}.${data.digitalocean_domain.web.name}"]
 
   lifecycle {
     create_before_destroy = true
@@ -29,7 +29,7 @@ resource "digitalocean_certificate" "web" {
 }
 
 resource "digitalocean_loadbalancer" "web" {
-  name        = "web-${ var.region }-loadbalancer"
+  name        = "web-${var.region}-loadbalancer"
   region      = var.region
   droplet_ids = digitalocean_droplet.web.*.id
 
@@ -70,11 +70,11 @@ resource "digitalocean_record" "web" {
 
 resource "digitalocean_database_db" "web" {
   cluster_id = digitalocean_database_cluster.web.id
-  name       = "web-${ var.region }-${ var.web_db_type }-database"
+  name       = "web-${var.region}-${var.web_db_type}-database"
 }
 
 resource "digitalocean_database_cluster" "web" {
-  name       = "web-${ var.region }-${ var.web_db_type }-cluster"
+  name       = "web-${var.region}-${var.web_db_type}-cluster"
   engine     = var.web_db_type
   version    = var.web_db_version
   size       = var.web_db_size
@@ -83,7 +83,7 @@ resource "digitalocean_database_cluster" "web" {
 }
 
 resource "datadog_monitor" "redmine" {
-  name    = "${ var.name } HTTP Alert! {{host.name}}"
+  name    = "${var.name} HTTP Alert! {{host.name}}"
   type    = "service check"
   message = "Monitor triggered. Notify: arttumin@gmail.com"
   query   = "\"http.can_connect\".over(\"instance:application_health_check_status\").by(\"host\",\"instance\",\"url\").last(2).count_by_status()"

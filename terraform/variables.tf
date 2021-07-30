@@ -11,42 +11,42 @@ variable "domain_name" {
 }
 
 variable "name" {
-  type = string
+  type    = string
   default = "hexlet-project-3"
 }
 
 variable "region" {
-  type = string
+  type    = string
   default = "ams3"
 }
 
 variable "web_droplet_count" {
-  type = number
+  type    = number
   default = 1
 }
 
 variable "web_droplet_image" {
-  type = string
+  type    = string
   default = "docker-20-04"
 }
 
 variable "web_droplet_size" {
-  type = string
+  type    = string
   default = "s-1vcpu-1gb"
 }
 
 variable "web_db_type" {
-  type = string
+  type    = string
   default = "pg"
 }
 
 variable "web_db_version" {
-  type = string
+  type    = string
   default = "11"
 }
 
 variable "web_db_size" {
-  type = string
+  type    = string
   default = "db-s-1vcpu-1gb"
 }
 

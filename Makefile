@@ -27,3 +27,6 @@ destroy:
 
 show:
 	make -C terraform show
+
+lint:
+	terraform -chdir=terraform fmt
