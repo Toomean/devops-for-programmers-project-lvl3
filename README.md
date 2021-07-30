@@ -4,6 +4,7 @@
 ### Requirements
 1. Make
 2. Ansible:2.7
+3. `ansible/.ansible_secret` file
 
 ### Add Terraform variables
 1. Create ./terraform/*.auto.tfvars file
@@ -38,6 +39,15 @@ example:
 <droplet_alias> ansible_host=<droplet_ip> ansible_user=<ansible_user>
 <droplet_alias> ansible_host=<droplet_ip> ansible_user=<ansible_user>
 ```
+
+### Add ansible variables
+- vault_datadog_api_key
+- redmine_db_postgres
+- redmine_db_username
+- redmine_db_password
+- redmine_db_database
+- redmine_db_port
+
 
 ### Deploy on servers
 `make deploy-servers`
